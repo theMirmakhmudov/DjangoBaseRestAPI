@@ -16,7 +16,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='books/')
+    image = models.ImageField(upload_to='books/', null=True, blank=True)
     published_date = models.DateField()
     isbn = models.CharField(max_length=13, unique=True)
 
